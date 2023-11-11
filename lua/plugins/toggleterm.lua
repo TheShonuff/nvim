@@ -16,7 +16,7 @@ return {
         desc = "ToggleTerm (float root_dir)",
       },
       {
-        "<leader>th",
+        "<leader>Th",
         function()
           local count = vim.v.count1
           require("toggleterm").toggle(count, 15, Util.root.get(), "horizontal")
@@ -24,7 +24,7 @@ return {
         desc = "ToggleTerm (horizontal root_dir)",
       },
       {
-        "<leader>tv",
+        "<leader>Tv",
 
         function()
           local count = vim.v.count1
@@ -33,17 +33,17 @@ return {
         desc = "ToggleTerm (vertical root_dir)",
       },
       {
-        "<leader>tn",
+        "<leader>Tn",
         "<cmd>ToggleTermSetName<cr>",
         desc = "Set term name",
       },
       {
-        "<leader>ts",
+        "<leader>Ts",
         "<cmd>TermSelect<cr>",
         desc = "Select term",
       },
       {
-        "<leader>tt",
+        "<leader>Tt",
         function()
           require("toggleterm").toggle(1, 100, Util.root.get(), "tab")
         end,

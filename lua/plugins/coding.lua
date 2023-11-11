@@ -1,4 +1,24 @@
 return {
+  -- Better Indent
+  --{ "NMAC427/guess-indent.nvim" },
+  -- Tab Out of quotes, parens, brackets
+  {
+    "abecodes/tabout.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "hrsh7th/nvim-cmp",
+    },
+    config = true,
+  },
+  -- Disable default <tab> and <s-tab> behavior in luansip
+  {
+    "L3MON4D3/LuaSnip",
+    keys = function()
+      return {}
+    end,
+  },
+
   {
     "zbirenbaum/copilot.lua",
     opts = {
