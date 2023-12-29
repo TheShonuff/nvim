@@ -8,6 +8,7 @@ return {
         "selene",
         "luacheck",
         "shfmt",
+        "ruff",
       })
     end,
   },
@@ -70,9 +71,9 @@ return {
         html = {},
         -- gopls = {},
         marksman = {},
-        -- pyright = {
-        --   enabled = false,
-        -- },
+        pyright = {
+          enabled = false,
+        },
         -- rust_analyzer = {
         -- settings = {
         --   ["rust-analyzer"] = {

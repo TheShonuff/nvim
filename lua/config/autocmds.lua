@@ -54,3 +54,20 @@ vim.api.nvim_create_autocmd({ "InsertEnter", "WinLeave" }, {
 })
 -- don't auto comment new line
 vim.api.nvim_create_autocmd("BufEnter", { command = [[set formatoptions-=cro]] })
+
+-- leet code nvim
+local once = false
+local ft_maps = { python3 = "python" }
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+  pattern = "*leetcode*.txt",
+  callback = function(ctx)
+    if not once then
+      vim.ui.select({ "python3", "rust" }, {
+        prompt = "Select language",
+      }, function(choice)
+        vim.bo.filetype = ft_maps[choice] or choice
+      end)
+    end
+    once = true
+  end,
+})

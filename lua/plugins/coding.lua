@@ -53,7 +53,7 @@ return {
       "saadparwaiz1/cmp_luasnip",
     },
     opts = function()
-      vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
+      --vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
       local cmp = require("cmp")
       local defaults = require("cmp.config.default")()
       return {
@@ -108,9 +108,9 @@ return {
           end,
         },
         experimental = {
-          ghost_text = {
-            hl_group = "CmpGhostText",
-          },
+          -- ghost_text = {
+          --   hl_group = "CmpGhostText",
+          -- },
         },
         sorting = defaults.sorting,
       }
@@ -121,6 +121,30 @@ return {
         source.group_index = source.group_index or 1
       end
       require("cmp").setup(opts)
+    end,
+  },
+  {
+    "glacambre/firenvim",
+    lazy = false,
+    build = function()
+      require("lazy").load({ plugins = "firenvim", wait = true })
+      vim.fn["firenvim#install"](0)
+    end,
+    --cond = not not vim.g.started_by_firenvim,
+    settings = "firenvim",
+
+    config = function()
+      vim.g.firenvim_config = {
+        localSettings = {
+          [".*"] = {
+            cmdline = "neovim",
+            content = "text",
+            priority = 0,
+            selector = "textarea",
+            takeover = "never",
+          },
+        },
+      }
     end,
   },
 }
