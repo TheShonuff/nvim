@@ -23,15 +23,13 @@ return {
           },
         },
       },
-      ---@type lspconfig.options
       servers = {
         ansiblels = {},
-        bashls = {},
-        tailwindcss = {
-          root_dir = function(...)
-            return require("lspconfig.util").root_pattern(".git")(...)
-          end,
-        },
+        -- tailwindcss = {
+        --   root_dir = function(...)
+        --     return require("lspconfig.util").root_pattern(".git")(...)
+        --   end,
+        -- },
         tsserver = {
           -- root_dir = function(...)
           --   return require("lspconfig.util").root_pattern(".git")(...)
