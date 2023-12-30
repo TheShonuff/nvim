@@ -27,11 +27,6 @@ return {
       servers = {
         ansiblels = {},
         bashls = {},
-        clangd = {},
-        -- denols = {},
-        cssls = {},
-        dockerls = {},
-        -- ruff_lsp = {},
         tailwindcss = {
           root_dir = function(...)
             return require("lspconfig.util").root_pattern(".git")(...)
@@ -70,7 +65,6 @@ return {
         -- svelte = {},
         html = {},
         -- gopls = {},
-        marksman = {},
         pyright = {
           enabled = false,
         },
