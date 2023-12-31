@@ -23,8 +23,10 @@ return {
           },
         },
       },
+      -- @type lspconfig.options
       servers = {
-        ansiblels = {},
+        ansiblels = { mason = false },
+
         -- tailwindcss = {
         --   root_dir = function(...)
         --     return require("lspconfig.util").root_pattern(".git")(...)
@@ -61,10 +63,13 @@ return {
           },
         },
         -- svelte = {},
-        html = {},
+        html = {
+          mason = true,
+        },
         -- gopls = {},
         pyright = {
           enabled = false,
+          mason = false,
         },
         -- rust_analyzer = {
         -- settings = {
@@ -79,6 +84,7 @@ return {
         -- },
         -- },
         yamlls = {
+          mason = false,
           settings = {
             yaml = {
               keyOrdering = false,
@@ -152,7 +158,7 @@ return {
             },
           },
         },
-        vimls = {},
+        vimls = { mason = false },
       },
       setup = {},
     },
