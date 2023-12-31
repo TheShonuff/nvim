@@ -26,6 +26,7 @@ return {
       -- @type lspconfig.options
       servers = {
         ansiblels = { mason = false },
+        bashls = {},
 
         -- tailwindcss = {
         --   root_dir = function(...)
